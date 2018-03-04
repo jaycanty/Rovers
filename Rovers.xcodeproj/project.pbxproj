@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE98DCF62048D7D2008B7443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE98DCF52048D7D2008B7443 /* AppDelegate.swift */; };
-		CE98DCF82048D7D2008B7443 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE98DCF72048D7D2008B7443 /* ViewController.swift */; };
 		CE98DCFB2048D7D2008B7443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE98DCF92048D7D2008B7443 /* Main.storyboard */; };
 		CE98DCFD2048D7D2008B7443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE98DCFC2048D7D2008B7443 /* Assets.xcassets */; };
 		CE98DD002048D7D2008B7443 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE98DCFE2048D7D2008B7443 /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		CE98DCF22048D7D2008B7443 /* Rovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE98DCF52048D7D2008B7443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE98DCF72048D7D2008B7443 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE98DCFA2048D7D2008B7443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE98DCFC2048D7D2008B7443 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE98DCFF2048D7D2008B7443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				CE98DCF52048D7D2008B7443 /* AppDelegate.swift */,
-				CE98DCF72048D7D2008B7443 /* ViewController.swift */,
 				CE98DCF92048D7D2008B7443 /* Main.storyboard */,
 				CE98DCFC2048D7D2008B7443 /* Assets.xcassets */,
 				CE98DCFE2048D7D2008B7443 /* LaunchScreen.storyboard */,
@@ -259,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE98DCF82048D7D2008B7443 /* ViewController.swift in Sources */,
 				CE98DCF62048D7D2008B7443 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
