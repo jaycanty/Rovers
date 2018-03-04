@@ -9,6 +9,7 @@
 import UIKit
 
 class GridContainerView: UIView {
+    
     @IBInspectable var isRouteMode: Bool = false
     
     override func awakeFromNib() {
