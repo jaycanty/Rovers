@@ -12,5 +12,19 @@ class RouteRoversViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onGridViewPressed(notification:)),
+            name: .gridViewPressed,
+            object: nil
+        )
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func onGridViewPressed(notification: Notification) {
+        print((notification.object as! GridView).position)
     }
 }

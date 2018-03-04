@@ -26,9 +26,16 @@ class GridContainerView: UIView {
             for yIndex in (0..<gridSize) {
                 let x = CGFloat(xIndex) * gridEdge
                 let y = CGFloat(yIndex) * gridEdge
-                let gridViewFrame = CGRect(x: x + fudge, y: y + fudge, width: gridEdge - fudge*2, height: gridEdge - fudge*2)
-                let gridView = GridView(frame: gridViewFrame)
-                gridView.backgroundColor = UIColor.lightGray
+                let gridViewFrame = CGRect(
+                    x: x + fudge,
+                    y: y + fudge,
+                    width: gridEdge - fudge*2,
+                    height: gridEdge - fudge*2
+                )
+                let gridView = GridView(
+                    frame: gridViewFrame,
+                    position: (xIndex, yIndex)
+                )
                 addSubview(gridView)
             }
         }
