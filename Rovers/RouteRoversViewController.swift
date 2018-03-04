@@ -10,6 +10,10 @@ import UIKit
 
 class RouteRoversViewController: UIViewController {
     
+    @IBOutlet weak var currentRoverLabel: UILabel!
+    @IBOutlet weak var initialPositionLabel: UILabel!
+    @IBOutlet weak var routeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(

@@ -91,15 +91,60 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRouteMode" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-6l-hIq">
+                                <rect key="frame" x="8" y="447" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial position:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-Ej-cyN">
+                                <rect key="frame" x="8" y="476" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmL-Su-zwS">
+                                <rect key="frame" x="8" y="505" width="49.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGH-oX-EAL">
+                                <rect key="frame" x="126" y="476" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbH-5e-6ai">
+                                <rect key="frame" x="65.5" y="505" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="z5N-Ej-cyN" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="1RN-4A-4Gn"/>
                             <constraint firstItem="9hs-Q5-7Ea" firstAttribute="trailing" secondItem="zKX-ET-Qge" secondAttribute="trailing" constant="8" id="5JK-mR-snn"/>
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="top" secondItem="9hs-Q5-7Ea" secondAttribute="top" constant="16" id="9dW-BF-aCR"/>
+                            <constraint firstItem="mbH-5e-6ai" firstAttribute="baseline" secondItem="vmL-Su-zwS" secondAttribute="baseline" id="SzS-UY-LOu"/>
+                            <constraint firstItem="mbH-5e-6ai" firstAttribute="leading" secondItem="vmL-Su-zwS" secondAttribute="trailing" constant="8" id="X12-y6-klb"/>
+                            <constraint firstItem="vmL-Su-zwS" firstAttribute="top" secondItem="z5N-Ej-cyN" secondAttribute="bottom" constant="8" id="XPG-Tz-dJi"/>
+                            <constraint firstItem="wGH-oX-EAL" firstAttribute="leading" secondItem="z5N-Ej-cyN" secondAttribute="trailing" constant="8" id="bqe-bQ-R21"/>
+                            <constraint firstItem="9GT-6l-hIq" firstAttribute="top" secondItem="zKX-ET-Qge" secondAttribute="bottom" constant="8" id="g65-53-oF4"/>
+                            <constraint firstItem="wGH-oX-EAL" firstAttribute="baseline" secondItem="z5N-Ej-cyN" secondAttribute="baseline" id="gbe-7R-5QI"/>
+                            <constraint firstItem="z5N-Ej-cyN" firstAttribute="top" secondItem="9GT-6l-hIq" secondAttribute="bottom" constant="8" id="iAR-TF-aMV"/>
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="ktW-8t-PT2"/>
+                            <constraint firstItem="vmL-Su-zwS" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="umw-Bw-qGd"/>
+                            <constraint firstItem="9GT-6l-hIq" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="vXC-X4-Vrg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9hs-Q5-7Ea"/>
                     </view>
+                    <connections>
+                        <outlet property="currentRoverLabel" destination="9GT-6l-hIq" id="FPG-EL-hUR"/>
+                        <outlet property="initialPositionLabel" destination="wGH-oX-EAL" id="A6Z-ny-ucV"/>
+                        <outlet property="routeLabel" destination="mbH-5e-6ai" id="7ep-h3-t1j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WH3-4g-edF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
