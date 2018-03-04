@@ -9,7 +9,10 @@
 import UIKit
 
 class SelectGridViewController: UIViewController {
-
+    
+    @IBOutlet weak var gridSizeTextField: UITextField!
+    @IBOutlet weak var gridSizeDisplayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +35,10 @@ class SelectGridViewController: UIViewController {
     }
     */
 
+}
+
+extension SelectGridViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
 }
