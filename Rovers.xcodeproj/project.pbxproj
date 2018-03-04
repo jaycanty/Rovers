@@ -78,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				CE98DCFC2048D7D2008B7443 /* Assets.xcassets */,
-				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CE98DCFE2048D7D2008B7443 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -107,6 +106,7 @@
 		CE98DCF42048D7D2008B7443 /* Rovers */ = {
 			isa = PBXGroup;
 			children = (
+				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CE98DCF52048D7D2008B7443 /* AppDelegate.swift */,
 				CE98DCF92048D7D2008B7443 /* Main.storyboard */,
 				CE234B8F204C450300F403C2 /* SelectGridViewController.swift */,
