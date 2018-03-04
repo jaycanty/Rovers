@@ -22,6 +22,10 @@ class RouteRoversViewController: UIViewController {
             name: .gridViewPressed,
             object: nil
         )
+        GridModel.shared.resetRoutingState()
+        currentRoverLabel.text = GridModel.shared.getCurrentRoverName()
+        initialPositionLabel.text = "-"
+        routeLabel.text = "-"
     }
     
     deinit {
@@ -29,6 +33,8 @@ class RouteRoversViewController: UIViewController {
     }
     
     @objc func onGridViewPressed(notification: Notification) {
-        print((notification.object as! GridView).position)
+        let gridView = notification.object as! GridView
+        gridView.redraw(drawState: .start)
+//        gridView.backgroundColor = UIColor.blue
     }
 }
