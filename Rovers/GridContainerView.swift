@@ -18,7 +18,7 @@ class GridContainerView: UIView {
     
     func drawGrid() {
         backgroundColor = UIColor.red
-        let gridSize = 10
+        let gridSize = GridModel.shared.gridSize
         let fudge: CGFloat = isRouteMode ? 1 : 0
         let gridEdge = frame.width / CGFloat(gridSize)
         for xIndex in (0..<gridSize) {

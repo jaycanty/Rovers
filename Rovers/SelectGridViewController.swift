@@ -13,7 +13,11 @@ class SelectGridViewController: UIViewController {
     @IBOutlet weak var gridSizeTextField: UITextField!
     @IBOutlet weak var gridSizeDisplayLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
-    fileprivate var gridSize: Int! = 0
+    fileprivate var gridSize: Int! = GridModel.shared.gridSize {
+        didSet {
+            GridModel.shared.gridSize = gridSize
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
