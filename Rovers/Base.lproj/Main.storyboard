@@ -51,7 +51,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
-                                            <action selector="nextButtonPressed:" destination="DLS-VD-OqB" eventType="touchUpInside" id="qcV-WI-6LP"/>
+                                            <segue destination="Y9b-Ds-8BW" kind="show" id="1hX-Sf-uD9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -71,6 +71,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpM-j9-Ykd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="8.5457271364317844"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j7a-dN-J48">
+            <objects>
+                <viewController id="Y9b-Ds-8BW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zm-ZM-Ky0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9hs-Q5-7Ea"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WH3-4g-edF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2K-Na-1ka">
