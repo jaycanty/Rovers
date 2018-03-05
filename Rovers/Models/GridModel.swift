@@ -29,6 +29,10 @@ class GridModel {
         return "Rover \(currentRouterIndex + 1)"
     }
     
+    func getRovers() -> [Rover] {
+        return rovers
+    }
+    
     func getCurrentRover() -> Rover {
         return rovers[currentRouterIndex]
     }

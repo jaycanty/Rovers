@@ -198,6 +198,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="gridContainerView" destination="7Qh-FH-hmD" id="Sdo-Q0-MST"/>
                         <outlet property="rightNavBarItem" destination="fBy-FZ-6UC" id="yFY-yI-zpr"/>
                     </connections>
                 </viewController>

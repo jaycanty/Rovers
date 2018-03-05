@@ -11,12 +11,23 @@ import UIKit
 class RoversViewController: UIViewController {
     
     @IBOutlet weak var rightNavBarItem: UIBarButtonItem!
+    @IBOutlet weak var gridContainerView: GridContainerView!
     let gridModel = GridModel.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let rovers = gridModel.
+        let rovers = gridModel.getRovers()
+        for rover in rovers {
+            let startPosition = rover.positions.first!
+            let gridViewWithPosition = gridContainerView.subviews.filter { view in
+                    guard let gridView = view as? GridView else {
+                        return false
+                    }
+                    return gridView.position == startPosition
+                }.first!
+            let roverView = RoverView(frame: gridViewWithPosition.frame)
+            gridContainerView.addSubview(roverView)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,5 +36,6 @@ class RoversViewController: UIViewController {
     }
     
     @IBAction func rightNavBarButtonPressed(_ sender: Any) {
+        
     }
 }
