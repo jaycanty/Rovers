@@ -15,6 +15,8 @@
 		CE234BB4204C8D7000F403C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE234BB3204C8D7000F403C2 /* Constants.swift */; };
 		CE234BB6204C984100F403C2 /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE234BB5204C984100F403C2 /* Rover.swift */; };
 		CE76C869204CB45600D58C31 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76C868204CB45600D58C31 /* Shared.swift */; };
+		CE76C86B204CDD1F00D58C31 /* RoversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76C86A204CDD1F00D58C31 /* RoversViewController.swift */; };
+		CE76C86D204CE07700D58C31 /* RoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76C86C204CE07700D58C31 /* RoverView.swift */; };
 		CE98DCF62048D7D2008B7443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE98DCF52048D7D2008B7443 /* AppDelegate.swift */; };
 		CE98DCFB2048D7D2008B7443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE98DCF92048D7D2008B7443 /* Main.storyboard */; };
 		CE98DCFD2048D7D2008B7443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE98DCFC2048D7D2008B7443 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		CE234BB3204C8D7000F403C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE234BB5204C984100F403C2 /* Rover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 		CE76C868204CB45600D58C31 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		CE76C86A204CDD1F00D58C31 /* RoversViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoversViewController.swift; sourceTree = "<group>"; };
+		CE76C86C204CE07700D58C31 /* RoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverView.swift; sourceTree = "<group>"; };
 		CE98DCF22048D7D2008B7443 /* Rovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE98DCF52048D7D2008B7443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE98DCFA2048D7D2008B7443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,8 +141,10 @@
 				CE98DCF92048D7D2008B7443 /* Main.storyboard */,
 				CE234B8F204C450300F403C2 /* SelectGridViewController.swift */,
 				CE234BAA204C755900F403C2 /* RouteRoversViewController.swift */,
+				CE76C86A204CDD1F00D58C31 /* RoversViewController.swift */,
 				CE234BAE204C77C100F403C2 /* GridContainerView.swift */,
 				CE234BAC204C778C00F403C2 /* GridView.swift */,
+				CE76C86C204CE07700D58C31 /* RoverView.swift */,
 				CE234B91204C474700F403C2 /* Supporting Files */,
 			);
 			path = Rovers;
@@ -298,7 +304,9 @@
 			files = (
 				CE234BAB204C755900F403C2 /* RouteRoversViewController.swift in Sources */,
 				CE234B90204C450300F403C2 /* SelectGridViewController.swift in Sources */,
+				CE76C86D204CE07700D58C31 /* RoverView.swift in Sources */,
 				CE234BAD204C778C00F403C2 /* GridView.swift in Sources */,
+				CE76C86B204CDD1F00D58C31 /* RoversViewController.swift in Sources */,
 				CE98DCF62048D7D2008B7443 /* AppDelegate.swift in Sources */,
 				CE234BB6204C984100F403C2 /* Rover.swift in Sources */,
 				CE234BB4204C8D7000F403C2 /* Constants.swift in Sources */,

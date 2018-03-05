@@ -10,6 +10,8 @@ import Foundation
 
 struct Constants {
     static let roverCount = 4
+    
+    static let toRoverSequeName = "ToRoverViewController"
 }
 
 extension Notification.Name {

@@ -43,7 +43,7 @@ class RouteRoversViewController: UIViewController {
     
     @IBAction func nextPressed(_ sender: UIBarButtonItem) {
         if (gridModel.isRoutingComplete()) {
-            
+            performSegue(withIdentifier: Constants.toRoverSequeName, sender: nil)
         } else {
             gridModel.routeNextRover()
             resetDisplay()

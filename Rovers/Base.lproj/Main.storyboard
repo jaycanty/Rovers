@@ -126,8 +126,10 @@
                         <constraints>
                             <constraint firstItem="z5N-Ej-cyN" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="1RN-4A-4Gn"/>
                             <constraint firstItem="9hs-Q5-7Ea" firstAttribute="trailing" secondItem="zKX-ET-Qge" secondAttribute="trailing" constant="8" id="5JK-mR-snn"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wGH-oX-EAL" secondAttribute="trailing" constant="20" symbolic="YES" id="6iW-OK-Noo"/>
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="top" secondItem="9hs-Q5-7Ea" secondAttribute="top" constant="16" id="9dW-BF-aCR"/>
                             <constraint firstItem="mbH-5e-6ai" firstAttribute="baseline" secondItem="vmL-Su-zwS" secondAttribute="baseline" id="SzS-UY-LOu"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mbH-5e-6ai" secondAttribute="trailing" constant="20" symbolic="YES" id="TMP-Lc-im1"/>
                             <constraint firstItem="mbH-5e-6ai" firstAttribute="leading" secondItem="vmL-Su-zwS" secondAttribute="trailing" constant="8" id="X12-y6-klb"/>
                             <constraint firstItem="vmL-Su-zwS" firstAttribute="top" secondItem="z5N-Ej-cyN" secondAttribute="bottom" constant="8" id="XPG-Tz-dJi"/>
                             <constraint firstItem="wGH-oX-EAL" firstAttribute="leading" secondItem="z5N-Ej-cyN" secondAttribute="trailing" constant="8" id="bqe-bQ-R21"/>
@@ -137,6 +139,7 @@
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="ktW-8t-PT2"/>
                             <constraint firstItem="vmL-Su-zwS" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="umw-Bw-qGd"/>
                             <constraint firstItem="9GT-6l-hIq" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="vXC-X4-Vrg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9GT-6l-hIq" secondAttribute="trailing" constant="20" symbolic="YES" id="wc2-jB-Qo0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9hs-Q5-7Ea"/>
                     </view>
@@ -153,11 +156,54 @@
                         <outlet property="initialPositionLabel" destination="wGH-oX-EAL" id="A6Z-ny-ucV"/>
                         <outlet property="nextButton" destination="RFM-BY-wwh" id="pze-bL-bCt"/>
                         <outlet property="routeLabel" destination="mbH-5e-6ai" id="7ep-h3-t1j"/>
+                        <segue destination="mU7-i0-Gpn" kind="show" identifier="ToRoverViewController" id="JBH-cV-b2y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WH3-4g-edF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1717.5999999999999" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="1698" y="9"/>
+        </scene>
+        <!--Rovers-->
+        <scene sceneID="KL8-kc-ZKB">
+            <objects>
+                <viewController id="mU7-i0-Gpn" customClass="RoversViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VcM-ie-OuW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qh-FH-hmD" customClass="GridContainerView" customModule="Rovers" customModuleProvider="target">
+                                <rect key="frame" x="8" y="80" width="359" height="359"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Qh-FH-hmD" secondAttribute="height" multiplier="1:1" id="wk3-qO-35u"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRouteMode" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Qh-FH-hmD" firstAttribute="leading" secondItem="Cqd-oj-FXO" secondAttribute="leading" constant="8" id="QJN-Vf-Uc0"/>
+                            <constraint firstItem="Cqd-oj-FXO" firstAttribute="trailing" secondItem="7Qh-FH-hmD" secondAttribute="trailing" constant="8" id="u51-U0-uad"/>
+                            <constraint firstItem="7Qh-FH-hmD" firstAttribute="top" secondItem="Cqd-oj-FXO" secondAttribute="top" constant="16" id="wFY-cO-Os3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cqd-oj-FXO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rovers" id="Fhe-tD-WQe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="fBy-FZ-6UC">
+                            <connections>
+                                <action selector="rightNavBarButtonPressed:" destination="mU7-i0-Gpn" id="nvG-i5-pCs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rightNavBarItem" destination="fBy-FZ-6UC" id="yFY-yI-zpr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TE9-Co-Zjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2K-Na-1ka">
