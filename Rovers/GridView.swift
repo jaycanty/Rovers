@@ -51,18 +51,43 @@ class GridView: UIView {
     func drawStart() {
         let circlePath = UIBezierPath(
             arcCenter: CGPoint(x: bounds.width/2, y: bounds.height/2),
-            radius: bounds.width * 0.4, // Circle diameter is %80 of width
+            radius: bounds.width * 0.3, // Circle diameter is %60 of width
             startAngle: 0,
             endAngle: CGFloat.pi*2,
             clockwise: true
         )
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.green.cgColor
-        layer.addSublayer(shapeLayer)
+        UIColor.green.set()
+        circlePath.fill()
     }
     
     func drawArrow(_ direction: Direction) {
-        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        var startPoint, centerPoint, endPoint: CGPoint
+        switch direction {
+        case .north:
+            startPoint = CGPoint(x: bounds.width/3, y: bounds.height - bounds.height/3)
+            centerPoint = CGPoint(x: bounds.width/2, y: bounds.height/3)
+            endPoint = CGPoint(x: bounds.width - bounds.width/3, y: bounds.height - bounds.height/3)
+        case .east:
+            startPoint = CGPoint(x: bounds.width/3, y: bounds.height/3)
+            centerPoint = CGPoint(x: bounds.width - bounds.width/3, y: bounds.height/2)
+            endPoint = CGPoint(x: bounds.width/3, y: bounds.height - bounds.height/3)
+        case .south:
+            startPoint = CGPoint(x: bounds.width/3, y: bounds.height/3)
+            centerPoint = CGPoint(x: bounds.width/2, y: bounds.height - bounds.height/3)
+            endPoint = CGPoint(x: bounds.width - bounds.width/3, y: bounds.height/3)
+        case .west:
+            startPoint = CGPoint(x: bounds.width - bounds.width/3, y: bounds.height/3)
+            centerPoint = CGPoint(x: bounds.width/3, y: bounds.height/2)
+            endPoint = CGPoint(x: bounds.width - bounds.width/3, y: bounds.height - bounds.height/3)
+        }
+        context.setStrokeColor(UIColor.white.cgColor)
+        context.setLineWidth(2)
+        context.move(to: startPoint)
+        context.addLine(to: centerPoint)
+        context.addLine(to: endPoint)
+        context.strokePath()
     }
 }
