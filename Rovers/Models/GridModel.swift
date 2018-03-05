@@ -8,51 +8,51 @@
 
 import Foundation
 
-enum RoutingState: Int {
-    case rover1
-    case rover2
-    case rover3
-    case rover4
-}
-
 class GridModel {
     static let shared = GridModel()
     
     var gridSize: Int = 0
     var maxManuvers: Int {
-        return gridSize*gridSize / 4
+        return gridSize*gridSize / Constants.roverCount
     }
-    var routingState: RoutingState = .rover1
-    var rovers = [Rover]()
+    private var currentRouterIndex = 0
+    private var rovers = [Rover]()
     
     private init() {}
     
     func resetRoutingState() {
-        routingState = .rover1
         rovers = Array(repeating: Rover(), count: 4)
         print(rovers)
     }
     
     func getCurrentRoverName() -> String {
-        return "Rover \(routingState.rawValue + 1)"
+        return "Rover \(currentRouterIndex + 1)"
     }
     
     func getCurrentRover() -> Rover {
-        return rovers[routingState.rawValue]
+        return rovers[currentRouterIndex]
+    }
+    
+    func isRoutingComplete() -> Bool {
+        return currentRouterIndex == (Constants.roverCount - 1)
+    }
+    
+    func routeNextRover() {
+        currentRouterIndex += 1
     }
     
     func updateRovers(_ rover: Rover) {
-        rovers.insert(rover, at: routingState.rawValue)
+        rovers[currentRouterIndex] = rover
     }
     
     func getGridViewDrawState(forPosition position: Position) -> DrawState {
         var rover = getCurrentRover()
+        // TODO: check for collison
         if (rover.positions.count == 0) {
             rover.positions.append(position)
             updateRovers(rover)
             return .start
         } else {
-            // TODO: check for collison
             if (rover.positions.count > maxManuvers) {
                 return .none
             }
