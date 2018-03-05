@@ -8,19 +8,6 @@
 
 import UIKit
 
-enum Direction {
-    case north
-    case east
-    case south
-    case west
-}
-
-enum DrawState {
-    case none
-    case start
-    case arrow(Direction)
-}
-
 class GridView: UIView {
     var position: (Int, Int)!
     fileprivate var drawState: DrawState = .none
