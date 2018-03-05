@@ -13,6 +13,7 @@ class RouteRoversViewController: UIViewController {
     @IBOutlet weak var currentRoverLabel: UILabel!
     @IBOutlet weak var initialPositionLabel: UILabel!
     @IBOutlet weak var routeLabel: UILabel!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class RouteRoversViewController: UIViewController {
         currentRoverLabel.text = GridModel.shared.getCurrentRoverName()
         initialPositionLabel.text = "-"
         routeLabel.text = "-"
+        nextButton.isEnabled = false
     }
     
     deinit {
@@ -34,7 +36,10 @@ class RouteRoversViewController: UIViewController {
     
     @objc func onGridViewPressed(notification: Notification) {
         let gridView = notification.object as! GridView
-        gridView.redraw(drawState: .start)
-//        gridView.backgroundColor = UIColor.blue
+        let nextState = GridModel.shared.getGridViewDrawState(forPosition: gridView.position)
+        gridView.redraw(drawState: nextState)
+    }
+    
+    @IBAction func nextPressed(_ sender: UIBarButtonItem) {
     }
 }
