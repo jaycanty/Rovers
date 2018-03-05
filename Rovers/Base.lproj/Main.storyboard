@@ -149,6 +149,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentRoverLabel" destination="9GT-6l-hIq" id="FPG-EL-hUR"/>
+                        <outlet property="gridContainerView" destination="zKX-ET-Qge" id="MyF-2i-tCs"/>
                         <outlet property="initialPositionLabel" destination="wGH-oX-EAL" id="A6Z-ny-ucV"/>
                         <outlet property="nextButton" destination="RFM-BY-wwh" id="pze-bL-bCt"/>
                         <outlet property="routeLabel" destination="mbH-5e-6ai" id="7ep-h3-t1j"/>

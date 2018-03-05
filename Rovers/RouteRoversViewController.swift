@@ -10,10 +10,13 @@ import UIKit
 
 class RouteRoversViewController: UIViewController {
     
+    @IBOutlet weak var gridContainerView: GridContainerView!
     @IBOutlet weak var currentRoverLabel: UILabel!
     @IBOutlet weak var initialPositionLabel: UILabel!
     @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var nextButton: UIBarButtonItem!
+    
+    private let gridModel = GridModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +26,8 @@ class RouteRoversViewController: UIViewController {
             name: .gridViewPressed,
             object: nil
         )
-        GridModel.shared.resetRoutingState()
-        currentRoverLabel.text = GridModel.shared.getCurrentRoverName()
-        initialPositionLabel.text = "-"
-        routeLabel.text = "-"
-        nextButton.isEnabled = false
+        gridModel.resetRoutingState()
+        resetDisplay()
     }
     
     deinit {
@@ -36,10 +36,31 @@ class RouteRoversViewController: UIViewController {
     
     @objc func onGridViewPressed(notification: Notification) {
         let gridView = notification.object as! GridView
-        let nextState = GridModel.shared.getGridViewDrawState(forPosition: gridView.position)
+        let nextState = gridModel.getGridViewDrawState(forPosition: gridView.position)
         gridView.redraw(drawState: nextState)
+        nextButton.isEnabled = gridModel.getCurrentRover().positions.count > 2
     }
     
     @IBAction func nextPressed(_ sender: UIBarButtonItem) {
+        if (gridModel.isRoutingComplete()) {
+            
+        } else {
+            gridModel.routeNextRover()
+            resetDisplay()
+        }
+    }
+    
+    private func resetDisplay() {
+        currentRoverLabel.text = gridModel.getCurrentRoverName()
+        initialPositionLabel.text = "-"
+        routeLabel.text = "-"
+        nextButton.isEnabled = false
+        wipeGridView()
+    }
+    
+    private func wipeGridView() {
+        for gridView in gridContainerView.subviews as! [GridView] {
+            gridView.redraw(drawState: .none)
+        }
     }
 }
