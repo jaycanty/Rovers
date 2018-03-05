@@ -9,5 +9,5 @@
 import Foundation
 
 struct Rover {
-    var positions = [(Int, Int)]()
+    var positions = [Position]()
 }

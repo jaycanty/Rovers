@@ -9,10 +9,10 @@
 import UIKit
 
 class GridView: UIView {
-    var position: (Int, Int)!
+    var position: Position!
     fileprivate var drawState: DrawState = .none
     
-    init(frame: CGRect, position: (Int, Int)) {
+    init(frame: CGRect, position: Position) {
         super.init(frame: frame)
         self.position = position
         backgroundColor = UIColor.lightGray

@@ -34,7 +34,7 @@ class GridContainerView: UIView {
                 )
                 let gridView = GridView(
                     frame: gridViewFrame,
-                    position: (xIndex, yIndex)
+                    position: Position(x: xIndex, y: yIndex)
                 )
                 addSubview(gridView)
             }
