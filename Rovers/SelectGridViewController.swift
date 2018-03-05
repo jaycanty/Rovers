@@ -30,7 +30,7 @@ extension SelectGridViewController: UITextFieldDelegate {
         let input = ((textField.text as NSString?) ?? "")
             .replacingCharacters(in: range, with: string)
         gridSize = Int(input) ?? 0
-        if (gridSize > 4 && gridSize < 40) {
+        if (gridSize > 4) && (gridSize < 40) {
             self.gridSizeDisplayLabel.text = gridSize == 0 ? "" : "\(input) X \(input)"
             self.nextButton.alpha = 1
         } else {
