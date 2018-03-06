@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rovers-->
+        <!--Mars Rovers-->
         <scene sceneID="ESF-Hp-otj">
             <objects>
                 <viewController id="DLS-VD-OqB" customClass="SelectGridViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vOc-Zt-59D"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Rovers" id="ZIY-DX-aIe">
+                    <navigationItem key="navigationItem" title="Mars Rovers" id="ZIY-DX-aIe">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Y8T-3N-x9x">
                             <connections>
                                 <segue destination="Y9b-Ds-8BW" kind="show" id="wew-KZ-Aaf"/>
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="8.5457271364317844"/>
         </scene>
-        <!--Route Rovers-->
+        <!--Route-->
         <scene sceneID="j7a-dN-J48">
             <objects>
                 <viewController id="Y9b-Ds-8BW" customClass="RouteRoversViewController" customModule="Rovers" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,20 +115,32 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLK-OP-9jv">
+                                <rect key="frame" x="8" y="478.5" width="335" height="124"/>
+                                <mutableString key="text">To route rovers press on the grid, you can move one position up/down, left/right.  There is no detailed feedback so if the grid node does nothing; - you are at max meneuvers - you made illegal move - collision with previous route There is a minimum of 3 meneuvers.</mutableString>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9hs-Q5-7Ea" firstAttribute="trailing" secondItem="zKX-ET-Qge" secondAttribute="trailing" constant="8" id="5JK-mR-snn"/>
+                            <constraint firstItem="A3c-E8-yLT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7zm-ZM-Ky0" secondAttribute="leading" constant="20" symbolic="YES" id="FP0-HC-AK6"/>
                             <constraint firstItem="A3c-E8-yLT" firstAttribute="centerY" secondItem="9GT-6l-hIq" secondAttribute="centerY" id="HfM-vz-yaS"/>
                             <constraint firstItem="9hs-Q5-7Ea" firstAttribute="trailing" secondItem="A3c-E8-yLT" secondAttribute="trailing" constant="8" id="K4N-pO-L5O"/>
+                            <constraint firstItem="9hs-Q5-7Ea" firstAttribute="trailing" secondItem="CLK-OP-9jv" secondAttribute="trailing" constant="32" id="Mae-8J-tn7"/>
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="top" secondItem="9GT-6l-hIq" secondAttribute="bottom" constant="8" id="gJ4-2V-3fH"/>
                             <constraint firstItem="zKX-ET-Qge" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="ktW-8t-PT2"/>
                             <constraint firstItem="9GT-6l-hIq" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="nVp-eQ-BeT"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9GT-6l-hIq" secondAttribute="trailing" constant="20" symbolic="YES" id="oTO-r1-dgW"/>
                             <constraint firstItem="9GT-6l-hIq" firstAttribute="top" secondItem="9hs-Q5-7Ea" secondAttribute="top" constant="8" id="qE4-iN-tbf"/>
+                            <constraint firstItem="CLK-OP-9jv" firstAttribute="leading" secondItem="9hs-Q5-7Ea" secondAttribute="leading" constant="8" id="rRO-1Y-HYq"/>
+                            <constraint firstItem="CLK-OP-9jv" firstAttribute="top" secondItem="zKX-ET-Qge" secondAttribute="bottom" constant="8" id="ujN-3O-SEE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9hs-Q5-7Ea"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Route Rovers" id="aKz-pC-T0Q">
+                    <navigationItem key="navigationItem" title="Route" id="aKz-pC-T0Q">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="RFM-BY-wwh">
                             <connections>
                                 <action selector="nextPressed:" destination="Y9b-Ds-8BW" id="dcr-69-3AY"/>
