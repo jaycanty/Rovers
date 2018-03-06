@@ -51,7 +51,9 @@ class GridModel {
     
     func getGridViewDrawState(forPosition position: Position) -> DrawState? {
         var rover = getCurrentRover()
-        // TODO: check for collison
+        if isCollision(atPosition: position) {
+            return nil
+        }
         if rover.positions.count == 0 {
             rover.positions.append(position)
             updateRovers(rover)
@@ -72,5 +74,31 @@ class GridModel {
             }
             return nil
         }
+    }
+    
+    private func isCollision(atPosition position: Position) -> Bool {
+        let current = getCurrentRover()
+        var otherRovers = rovers
+        otherRovers.remove(at: currentRouterIndex)
+        for otherRover in otherRovers {
+            // If they are in the same position at the same time
+            if otherRover.positions.count > current.positions.count {
+                let otherPosition = otherRover.positions[current.positions.count]
+                if otherPosition == position {
+                    return true
+                }
+            }
+            // headon collision
+            for (index, otherPosition) in otherRover.positions.enumerated() {
+                if otherPosition == position {
+                    if (otherRover.positions.count > (index + 1)) && (current.positions.count > 0) {
+                        if otherRover.positions[index + 1] == current.positions.last! {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        return false
     }
 }
