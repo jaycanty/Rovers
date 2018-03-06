@@ -2,10 +2,14 @@
 
 ## Run
 
-open Rovers.xcodeproj  
-click run
+```
+git clone git@github.com:jaycanty/Rovers.git
+cd Rovers
+open Rovers.xcodeproj
+```
+and run!
 
-## Instructions
+## Desscription
 
 - First screen: enter the size of the grid
 - Second screen: play with the ui to route the rovers
