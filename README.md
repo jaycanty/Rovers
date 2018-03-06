@@ -28,7 +28,9 @@ and run!
 - The obvious, is lack of feedback when routing
 - All logic departures from the spec
 - routing reverse overwrites the previous grid symbol
-- Architecture is inconsistent
+- Architecture  
+-- I would try mvvm  
+-- Tests!
 
 ## Future features
 
