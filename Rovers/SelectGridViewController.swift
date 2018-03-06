@@ -19,15 +19,21 @@ class SelectGridViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.nextButton.isEnabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        gridSizeTextField.text = ""
+        gridSizeDisplayLabel.text = ""
+        nextButton.isEnabled = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
     }
 }
 
 extension SelectGridViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         let input = ((textField.text as NSString?) ?? "")
             .replacingCharacters(in: range, with: string)
         gridSize = Int(input) ?? 0
