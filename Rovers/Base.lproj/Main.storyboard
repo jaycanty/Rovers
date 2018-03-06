@@ -116,8 +116,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLK-OP-9jv">
-                                <rect key="frame" x="8" y="478.5" width="335" height="124"/>
-                                <mutableString key="text">To route rovers press on the grid, you can move one position up/down, left/right.  There is no detailed feedback so if the grid node does nothing; - you are at max meneuvers - you made illegal move - collision with previous route There is a minimum of 3 meneuvers.</mutableString>
+                                <rect key="frame" x="8" y="478.5" width="335" height="142"/>
+                                <mutableString key="text">To route rovers press on the grid, you can move one position up/down, left/right.  There is no detailed feedback so if the grid node does nothing; - you are at max meneuvers - you made illegal move - collision with previous route Each rover must perform all meneuvers. hint: if you get trapped, reverse is allowed.</mutableString>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
