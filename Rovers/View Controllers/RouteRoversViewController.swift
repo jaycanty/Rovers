@@ -42,7 +42,7 @@ class RouteRoversViewController: UIViewController {
         if let nextState = gridModel.getGridViewDrawState(forPosition: gridView.position) {
             gridView.redraw(drawState: nextState)
             let count = gridModel.getCurrentRover().positions.count
-            nextButton.isEnabled = (count > gridModel.maxManeuvers)
+            nextButton.isEnabled = (count == gridModel.maxManeuvers)
             setManeuvers(count)
         }
     }
