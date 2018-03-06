@@ -137,10 +137,10 @@
 			children = (
 				CE98DCF52048D7D2008B7443 /* AppDelegate.swift */,
 				CE98DCF92048D7D2008B7443 /* Main.storyboard */,
+				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CECB3F72204E379400AC90C1 /* View Controllers */,
 				CECB3F73204E37A400AC90C1 /* Views */,
 				CE234BB0204C862000F403C2 /* Models */,
-				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CE234B91204C474700F403C2 /* Supporting Files */,
 			);
 			path = Rovers;
