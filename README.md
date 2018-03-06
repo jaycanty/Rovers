@@ -1,8 +1,8 @@
-### Rover
+# Rover
 
 ## Run
 
-open Rovers.xcodeproj
+open Rovers.xcodeproj  
 click run
 
 ## Instructions
@@ -11,13 +11,12 @@ click run
 - Second screen: play with the ui to route the rovers
 - Third screen: show the rovers roving
 
-## departures (Time constraints)
+## Departures from spec (time constraints)
 
-The end logic differs from the spec in the following:
-- The rover turns and advances, it does not turn in the square as specified
-- All rovers must complete the same number of meneuvers
--- Bug in animateKeyFrames
--- Bug with occupying another rovers last position
+- The rover turns and advances, it does not turn in the square as specified  
+- All rovers must complete the same number of meneuvers  
+-- Bug in animateKeyFrames  
+-- Bug with occupying another rovers last position  
 - Rovers can go in reverse
 
 ## Shortcomings
