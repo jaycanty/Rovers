@@ -12,7 +12,7 @@ class SelectGridViewController: UIViewController {
     
     @IBOutlet weak var gridSizeTextField: UITextField!
     @IBOutlet weak var gridSizeDisplayLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     fileprivate var gridSize: Int! = GridModel.shared.gridSize {
         didSet {
             GridModel.shared.gridSize = gridSize
@@ -21,6 +21,7 @@ class SelectGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nextButton.isEnabled = false
     }
 }
 
@@ -30,12 +31,12 @@ extension SelectGridViewController: UITextFieldDelegate {
         let input = ((textField.text as NSString?) ?? "")
             .replacingCharacters(in: range, with: string)
         gridSize = Int(input) ?? 0
-        if (gridSize > 4) && (gridSize < 40) {
+        if (gridSize >= 4) && (gridSize <= 20) {
             self.gridSizeDisplayLabel.text = gridSize == 0 ? "" : "\(input) X \(input)"
-            self.nextButton.alpha = 1
+            self.nextButton.isEnabled = true
         } else {
-            self.gridSizeDisplayLabel.text = "Grid size range: 4-40"
-            self.nextButton.alpha = 0
+            self.gridSizeDisplayLabel.text = "Grid size range: 4-20"
+            self.nextButton.isEnabled = false
         }
         return true
     }
