@@ -14,6 +14,7 @@ class RoversViewController: UIViewController {
     @IBOutlet weak var gridContainerView: GridContainerView!
     var rovers = GridModel.shared.getRovers()
     var roverViewLookup = [RoverView]()
+    var shouldResetReplay = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,17 @@ class RoversViewController: UIViewController {
     }
     
     @IBAction func rightNavBarButtonPressed(_ sender: UIBarButtonItem) {
-        rove()
+        rightNavBarItem.isEnabled = false
+        if shouldResetReplay {
+            UIView.animate(withDuration: 0.35, animations: {
+                self.resetStartPositions()
+            }, completion: { complete in
+                self.rove()
+            })
+        } else {
+            rove()
+            shouldResetReplay = true
+        }
     }
     
     private func rove() {
@@ -41,7 +52,7 @@ class RoversViewController: UIViewController {
                 }
         },
             completion: { complete in
-                
+                self.rightNavBarItem.isEnabled = true
         })
     }
     
@@ -52,6 +63,14 @@ class RoversViewController: UIViewController {
             let roverView = RoverView(frame: gridViewWithPosition.frame)
             roverViewLookup.append(roverView)
             gridContainerView.addSubview(roverView)
+        }
+    }
+    
+    private func resetStartPositions() {
+        for (index, rover) in rovers.enumerated() {
+            let startPosition = rover.positions.first!
+            let gridViewWithPosition = getGridView(atPosition: startPosition)
+            roverViewLookup[index].center = gridViewWithPosition.center
         }
     }
     
