@@ -15,7 +15,7 @@ class GridView: UIView {
     init(frame: CGRect, position: Position) {
         super.init(frame: frame)
         self.position = position
-        backgroundColor = UIColor.lightGray
+        backgroundColor = Constants.marsColor
     }
     
     required init?(coder aDecoder: NSCoder) {

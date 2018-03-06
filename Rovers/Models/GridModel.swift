@@ -12,7 +12,7 @@ class GridModel {
     static let shared = GridModel()
     
     var gridSize: Int = 0
-    var maxManuvers: Int {
+    var maxManeuvers: Int {
         return gridSize*gridSize / Constants.roverCount
     }
     private var currentRouterIndex = 0
@@ -21,8 +21,8 @@ class GridModel {
     private init() {}
     
     func resetRoutingState() {
+        currentRouterIndex = 0
         rovers = Array(repeating: Rover(), count: 4)
-        print(rovers)
     }
     
     func getCurrentRoverName() -> String {
@@ -57,7 +57,7 @@ class GridModel {
             updateRovers(rover)
             return .start
         } else {
-            if rover.positions.count > maxManuvers {
+            if rover.positions.count == maxManeuvers {
                 return nil
             }
             let lastPostion = rover.positions.last!

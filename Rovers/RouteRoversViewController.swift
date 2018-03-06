@@ -12,10 +12,8 @@ class RouteRoversViewController: UIViewController {
     
     @IBOutlet weak var gridContainerView: GridContainerView!
     @IBOutlet weak var currentRoverLabel: UILabel!
-    @IBOutlet weak var initialPositionLabel: UILabel!
-    @IBOutlet weak var routeLabel: UILabel!
+    @IBOutlet weak var maneuversLabel: UILabel!
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    
     private let gridModel = GridModel.shared
     
     override func viewDidLoad() {
@@ -26,6 +24,11 @@ class RouteRoversViewController: UIViewController {
             name: .gridViewPressed,
             object: nil
         )
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         gridModel.resetRoutingState()
         resetDisplay()
     }
@@ -38,7 +41,9 @@ class RouteRoversViewController: UIViewController {
         let gridView = notification.object as! GridView
         if let nextState = gridModel.getGridViewDrawState(forPosition: gridView.position) {
             gridView.redraw(drawState: nextState)
-            nextButton.isEnabled = gridModel.getCurrentRover().positions.count > 2
+            let count = gridModel.getCurrentRover().positions.count
+            nextButton.isEnabled = count > 2
+            setManeuvers(count)
         }
     }
     
@@ -52,9 +57,8 @@ class RouteRoversViewController: UIViewController {
     }
     
     private func resetDisplay() {
+        setManeuvers(0)
         currentRoverLabel.text = gridModel.getCurrentRoverName()
-        initialPositionLabel.text = "-"
-        routeLabel.text = "-"
         nextButton.isEnabled = false
         wipeGridView()
     }
@@ -63,5 +67,9 @@ class RouteRoversViewController: UIViewController {
         for gridView in gridContainerView.subviews as! [GridView] {
             gridView.redraw(drawState: .none)
         }
+    }
+    
+    private func setManeuvers(_ count: Int) {
+        maneuversLabel.text = "maneuvers: \(count)/\(gridModel.maxManeuvers)"
     }
 }

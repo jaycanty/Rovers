@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     static let roverCount = 4
-    
+    static let marsColor = UIColor(displayP3Red: 145/255, green: 97/255, blue: 75/255, alpha: 1.0)
     static let toRoverSequeName = "ToRoverViewController"
 }
 
