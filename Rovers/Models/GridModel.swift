@@ -90,7 +90,7 @@ class GridModel {
             }
             // headon collision
             for (index, otherPosition) in otherRover.positions.enumerated() {
-                if otherPosition == position {
+                if otherPosition == position && index <= current.positions.count {
                     if (otherRover.positions.count > (index + 1)) && (current.positions.count > 0) {
                         if otherRover.positions[index + 1] == current.positions.last! {
                             return true
