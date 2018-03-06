@@ -56,10 +56,10 @@ class RoversViewController: UIViewController {
     }
     
     private func moveToRoversNextPositon(atIndex index: Int) {
-        for (roverIndex, rover) in self.rovers.enumerated() {
+        for (roverIndex, rover) in rovers.enumerated() {
             if rover.positions.count > index {
-                let gridView = self.getGridView(atPosition: rover.positions[index])
-                self.roverViewLookup[roverIndex].center = gridView.center
+                let gridView = getGridView(atPosition: rover.positions[index])
+                roverViewLookup[roverIndex].center = gridView.center
             }
         }
     }
