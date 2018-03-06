@@ -135,16 +135,12 @@
 		CE98DCF42048D7D2008B7443 /* Rovers */ = {
 			isa = PBXGroup;
 			children = (
-				CE234BB0204C862000F403C2 /* Models */,
-				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CE98DCF52048D7D2008B7443 /* AppDelegate.swift */,
 				CE98DCF92048D7D2008B7443 /* Main.storyboard */,
-				CE234B8F204C450300F403C2 /* SelectGridViewController.swift */,
-				CE234BAA204C755900F403C2 /* RouteRoversViewController.swift */,
-				CE76C86A204CDD1F00D58C31 /* RoversViewController.swift */,
-				CE234BAE204C77C100F403C2 /* GridContainerView.swift */,
-				CE234BAC204C778C00F403C2 /* GridView.swift */,
-				CE76C86C204CE07700D58C31 /* RoverView.swift */,
+				CECB3F72204E379400AC90C1 /* View Controllers */,
+				CECB3F73204E37A400AC90C1 /* Views */,
+				CE234BB0204C862000F403C2 /* Models */,
+				CE98DD012048D7D2008B7443 /* Info.plist */,
 				CE234B91204C474700F403C2 /* Supporting Files */,
 			);
 			path = Rovers;
@@ -166,6 +162,26 @@
 				CE98DD172048D7D2008B7443 /* Info.plist */,
 			);
 			path = RoversUITests;
+			sourceTree = "<group>";
+		};
+		CECB3F72204E379400AC90C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE234B8F204C450300F403C2 /* SelectGridViewController.swift */,
+				CE234BAA204C755900F403C2 /* RouteRoversViewController.swift */,
+				CE76C86A204CDD1F00D58C31 /* RoversViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CECB3F73204E37A400AC90C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE234BAE204C77C100F403C2 /* GridContainerView.swift */,
+				CE234BAC204C778C00F403C2 /* GridView.swift */,
+				CE76C86C204CE07700D58C31 /* RoverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
