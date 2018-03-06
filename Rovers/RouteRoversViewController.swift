@@ -36,9 +36,10 @@ class RouteRoversViewController: UIViewController {
     
     @objc func onGridViewPressed(notification: Notification) {
         let gridView = notification.object as! GridView
-        let nextState = gridModel.getGridViewDrawState(forPosition: gridView.position)
-        gridView.redraw(drawState: nextState)
-        nextButton.isEnabled = gridModel.getCurrentRover().positions.count > 2
+        if let nextState = gridModel.getGridViewDrawState(forPosition: gridView.position) {
+            gridView.redraw(drawState: nextState)
+            nextButton.isEnabled = gridModel.getCurrentRover().positions.count > 2
+        }
     }
     
     @IBAction func nextPressed(_ sender: UIBarButtonItem) {

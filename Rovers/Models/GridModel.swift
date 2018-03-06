@@ -49,7 +49,7 @@ class GridModel {
         rovers[currentRouterIndex] = rover
     }
     
-    func getGridViewDrawState(forPosition position: Position) -> DrawState {
+    func getGridViewDrawState(forPosition position: Position) -> DrawState? {
         var rover = getCurrentRover()
         // TODO: check for collison
         if rover.positions.count == 0 {
@@ -58,7 +58,7 @@ class GridModel {
             return .start
         } else {
             if rover.positions.count > maxManuvers {
-                return .none
+                return nil
             }
             let lastPostion = rover.positions.last!
             if (lastPostion.x == position.x) && (abs(lastPostion.y - position.y) == 1) { // North or south
@@ -70,7 +70,7 @@ class GridModel {
                 updateRovers(rover)
                 return .arrow(lastPostion.x - position.x > 0 ? .west : .east)
             }
-            return .none
+            return nil
         }
     }
 }
