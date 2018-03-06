@@ -12,30 +12,70 @@ class RoversViewController: UIViewController {
     
     @IBOutlet weak var rightNavBarItem: UIBarButtonItem!
     @IBOutlet weak var gridContainerView: GridContainerView!
-    let gridModel = GridModel.shared
-
+    var rovers = GridModel.shared.getRovers()
+    var roverViewLookup = [RoverView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rovers = gridModel.getRovers()
+        displayStartPositions()
+    }
+    
+    @IBAction func rightNavBarButtonPressed(_ sender: UIBarButtonItem) {
+        rove()
+    }
+    
+    private func rove() {
+        let endIndex = getMaxManuvers()
+        UIView.animateKeyframes(
+            withDuration: Double(endIndex),
+            delay: 0,
+            options: .calculationModePaced,
+            animations: {
+                for positionIndex in 1...endIndex {
+                    UIView.addKeyframe(
+                        withRelativeStartTime: Double(positionIndex-1)/Double(endIndex),
+                        relativeDuration: 1/Double(endIndex),
+                        animations: {
+                            self.moveToRoversNextPositon(atIndex: positionIndex)
+                    })
+                }
+        },
+            completion: { complete in
+                
+        })
+    }
+    
+    private func displayStartPositions() {
         for rover in rovers {
             let startPosition = rover.positions.first!
-            let gridViewWithPosition = gridContainerView.subviews.filter { view in
-                    guard let gridView = view as? GridView else {
-                        return false
-                    }
-                    return gridView.position == startPosition
-                }.first!
+            let gridViewWithPosition = getGridView(atPosition: startPosition)
             let roverView = RoverView(frame: gridViewWithPosition.frame)
+            roverViewLookup.append(roverView)
             gridContainerView.addSubview(roverView)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func moveToRoversNextPositon(atIndex index: Int) {
+        for (roverIndex, rover) in self.rovers.enumerated() {
+            if rover.positions.count > index {
+                let gridView = self.getGridView(atPosition: rover.positions[index])
+                self.roverViewLookup[roverIndex].center = gridView.center
+            }
+        }
     }
     
-    @IBAction func rightNavBarButtonPressed(_ sender: Any) {
-        
+    private func getGridView(atPosition position: Position) -> GridView {
+        return gridContainerView.subviews.filter { view in
+            guard let gridView = view as? GridView else {
+                return false
+            }
+            return gridView.position == position
+        }.first as! GridView
+    }
+    
+    private func getMaxManuvers() -> Int {
+        return rovers.map { rover in
+            return rover.positions.count
+        }.max()! - 1
     }
 }
